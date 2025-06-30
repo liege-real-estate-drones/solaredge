@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "834718271560",
+    "project_id": "solaredge-monitor-a46f0",
+    "storage_bucket": "solaredge-monitor-a46f0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:834718271560:android:5d401b8846aba3973d307d",
+        "android_client_info": {
+          "package_name": "com.solaredge.monitor.solaredge_monitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "834718271560-l3mrckhepo641d4k6436jmnuo8ccrn5b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solaredge.monitor.solaredge_monitor",
+            "certificate_hash": "bbfb5817eb8caeec0d8e0f422edbbcaf8b99f6dc"
+          }
+        },
+        {
+          "client_id": "834718271560-7chc61o5otd78fur8rc22ipkgids6q6q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAReOnrgDJZ11wa481Z5zdVRpWHgGhi9Jw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "834718271560-7chc61o5otd78fur8rc22ipkgids6q6q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
