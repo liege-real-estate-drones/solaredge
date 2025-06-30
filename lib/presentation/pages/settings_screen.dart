@@ -216,21 +216,23 @@ class _SettingsScreenState extends State<SettingsScreen> {
       }
       
       // Si on arrive ici, c'est que la connexion a réussi
+      String connectionMessage = 'Connexion réussie! Nom du site: ${siteName ?? "Non défini"}\n';
+
+      // Ajouter la puissance crête si disponible
+      if (peakPower != null) {
+        connectionMessage += 'Puissance crête: ${peakPower.toStringAsFixed(2)} kW\n';
+      }
+
+      // Ajouter les coordonnées si disponibles
+      if (latitude != null && longitude != null) {
+        connectionMessage += 'Latitude: ${latitude.toStringAsFixed(4)}, Longitude: ${longitude.toStringAsFixed(4)}\n';
+      }
+
       setState(() {
         _siteName = siteName;
         _sitePeakPower = peakPower;
         _testConnectionSuccess = true;
-        _testConnectionResult = 'Connexion réussie! Nom du site: ${siteName ?? "Non défini"}\n';
-        
-        // Ajouter la puissance crête si disponible
-        if (peakPower != null) {
-          _testConnectionResult += 'Puissance crête: ${peakPower.toStringAsFixed(2)} kW\n';
-        }
-        
-        // Ajouter les coordonnées si disponibles
-        if (latitude != null && longitude != null) {
-          _testConnectionResult += 'Latitude: ${latitude.toStringAsFixed(4)}, Longitude: ${longitude.toStringAsFixed(4)}\n';
-        }
+        _testConnectionResult = connectionMessage;
         
         // Sauvegarder les coordonnées du site pour une utilisation future
         _saveSiteCoordinates(latitude, longitude, siteName, peakPower);

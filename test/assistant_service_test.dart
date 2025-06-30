@@ -38,6 +38,11 @@ class FakeUserPreferences implements UserPreferences {
   String? _fakePanelOrientation;
   double? _fakeWashingMachineKw;
   int? _fakeDefaultWashingMachineDurationMin; // Added for the new field
+  // New fields for dryer and washing machine 2
+  double? _fakeDryerKw;
+  int? _fakeDefaultDryerDurationMin;
+  double? _fakeWashingMachine2Kw;
+  int? _fakeDefaultWashingMachine2DurationMin;
   double? _fakeLatitude;
   double? _fakeLongitude;
 
@@ -101,6 +106,27 @@ class FakeUserPreferences implements UserPreferences {
   @override
   set defaultWashingMachineDurationMin(int? value) => _fakeDefaultWashingMachineDurationMin = value;
 
+  // Getters and Setters for new fields
+  @override
+  double? get dryerKw => _fakeDryerKw;
+  @override
+  set dryerKw(double? value) => _fakeDryerKw = value;
+
+  @override
+  int? get defaultDryerDurationMin => _fakeDefaultDryerDurationMin;
+  @override
+  set defaultDryerDurationMin(int? value) => _fakeDefaultDryerDurationMin = value;
+
+  @override
+  double? get washingMachine2Kw => _fakeWashingMachine2Kw;
+  @override
+  set washingMachine2Kw(double? value) => _fakeWashingMachine2Kw = value;
+
+  @override
+  int? get defaultWashingMachine2DurationMin => _fakeDefaultWashingMachine2DurationMin;
+  @override
+  set defaultWashingMachine2DurationMin(int? value) => _fakeDefaultWashingMachine2DurationMin = value;
+
 
   FakeUserPreferences({
     this.solarEdgeApiKey,
@@ -119,6 +145,11 @@ class FakeUserPreferences implements UserPreferences {
     String? panelOrientation,
     double? washingMachineKw,
     int? defaultWashingMachineDurationMin, // Added
+    // New fields in constructor
+    double? dryerKw,
+    int? defaultDryerDurationMin,
+    double? washingMachine2Kw,
+    int? defaultWashingMachine2DurationMin,
     double? latitude,
     double? longitude,
     this.weatherLocationSource = 'site_primary',
@@ -131,6 +162,11 @@ class FakeUserPreferences implements UserPreferences {
        _fakePanelOrientation = panelOrientation,
        _fakeWashingMachineKw = washingMachineKw,
        _fakeDefaultWashingMachineDurationMin = defaultWashingMachineDurationMin, // Added
+       // Initialize new fields
+       _fakeDryerKw = dryerKw,
+       _fakeDefaultDryerDurationMin = defaultDryerDurationMin,
+       _fakeWashingMachine2Kw = washingMachine2Kw,
+       _fakeDefaultWashingMachine2DurationMin = defaultWashingMachine2DurationMin,
        _fakeLatitude = latitude,
        _fakeLongitude = longitude,
        selectedLanguage = selectedLanguage; // Initialize the final field
@@ -154,6 +190,11 @@ class FakeUserPreferences implements UserPreferences {
     String? panelOrientation,
     double? washingMachineKw,
     int? defaultWashingMachineDurationMin, // Added
+    // New fields for copyWith
+    double? dryerKw,
+    int? defaultDryerDurationMin,
+    double? washingMachine2Kw,
+    int? defaultWashingMachine2DurationMin,
     double? latitude,
     double? longitude,
     String? weatherLocationSource,
@@ -175,6 +216,11 @@ class FakeUserPreferences implements UserPreferences {
       panelOrientation: panelOrientation ?? this._fakePanelOrientation,
       washingMachineKw: washingMachineKw ?? this._fakeWashingMachineKw,
       defaultWashingMachineDurationMin: defaultWashingMachineDurationMin ?? this._fakeDefaultWashingMachineDurationMin, // Added
+      // Pass new fields to copyWith
+      dryerKw: dryerKw ?? this._fakeDryerKw,
+      defaultDryerDurationMin: defaultDryerDurationMin ?? this._fakeDefaultDryerDurationMin,
+      washingMachine2Kw: washingMachine2Kw ?? this._fakeWashingMachine2Kw,
+      defaultWashingMachine2DurationMin: defaultWashingMachine2DurationMin ?? this._fakeDefaultWashingMachine2DurationMin,
       latitude: latitude ?? this._fakeLatitude,
       longitude: longitude ?? this._fakeLongitude,
       weatherLocationSource: weatherLocationSource ?? this.weatherLocationSource,
