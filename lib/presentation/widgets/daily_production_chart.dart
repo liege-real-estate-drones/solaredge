@@ -39,8 +39,8 @@ class _DailyProductionChartState extends State<DailyProductionChart> {
         lineTouchData: LineTouchData(
           touchTooltipData: LineTouchTooltipData(
             // --- CORRECTION : tooltipBgColor déplacé ici ---
-            get tooltipBgColor => AppTheme.cardColor.withOpacity(0.8);
-            get tooltipRoundedRadius => 8;
+            tooltipBgColor: AppTheme.cardColor.withOpacity(0.8), // Corrected syntax
+            tooltipRoundedRadius: 8,
             getTooltipItems: (List<LineBarSpot> touchedSpots) {
               return touchedSpots
                   .map((spot) {
